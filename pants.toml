@@ -1,0 +1,40 @@
+[GLOBAL]
+pants_version = "2.16.0"
+backend_packages = [
+  "pants.backend.docker",
+  "pants.backend.docker.lint.hadolint",
+  "pants.backend.shell",
+  "pants.backend.python",
+  "pants.backend.plugin_development",
+  "pants.backend.python.lint.autoflake",
+  "pants.backend.python.lint.bandit",
+  "pants.backend.python.lint.black",
+  "pants.backend.python.lint.flake8",
+  "pants.backend.python.lint.isort",
+  "pants.backend.python.lint.pylint",
+  "pants.backend.python.mixed_interpreter_constraints",
+  "pants.backend.experimental.python",
+  "pants.backend.experimental.tools.yamllint",
+  "pants.backend.experimental.helm",
+  "pants.backend.shell.lint.shellcheck",
+]
+unmatched_build_file_globs = "error"
+
+[source]
+marker_filenames = ["pyproject.toml"]
+
+[python]
+pip_version = "23.0.1"
+interpreter_constraints = [">=3.10, <3.11"]
+tailor_requirements_targets = false
+enable_resolves = false
+
+
+[python-bootstrap]
+search_path = ["<PYENV>", "<PATH>"]
+
+[python-infer]
+unowned_dependency_behavior = "error"
+ambiguity_resolution = "by_source_root"
+string_imports = true
+assets = true
