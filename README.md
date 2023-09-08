@@ -1,11 +1,11 @@
 # Reproduce behaviour in `pants` where modifications to `__defaults__` in `BUILD` files are not detected/propagated when using `--changed-since`
 
-Checkout a the commit:
+Checkout the commit:
 ```
 git checkout dd83a04f2fd46109e001033fb3ae9d88b6c9e50a
 ```
 
-In this current commit, we have some `BUILD` files (`example-1/libs/BUILD` and `example-1/BUILD`) where the 
+In this current commit, we have some `BUILD` files (`example-1/libs/BUILD` and `example-1/BUILD`) where 
 `pylint`, `black` and `flake8` are skipped.
 
 We can see that all linting tests pass:
